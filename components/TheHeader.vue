@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100 border-2 rounded">
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -51,11 +51,26 @@
       </ul>
     </div>
     <div class="navbar-end">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost rounded-btn">Themes</label>
+        <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+          <li v-for="theme in themes"><a @click="$emit('passColor', theme)">{{ theme }}</a></li>
+        </ul>
+      </div>
       <a class="btn">Button</a>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  themes: {
+    type: Array,
+    default: () => ['cupcake', 'dark', 'light']
+  }
+})
+</script>
 
 <style></style>

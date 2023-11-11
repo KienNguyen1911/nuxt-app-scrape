@@ -4,23 +4,10 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui"), require("tailwindcss-animate"),],
   // daisyUI config (optional - here are the default values)
   daisyui: {
     themes: [
-      {
-        mytheme: {
-          primary: "#570df8",
-          secondary: "#f000b8",
-          accent: "#1dcdbc",
-          neutral: "#2b3440",
-          "base-100": "#ffffff",
-          info: "#3abff8",
-          success: "#36d399",
-          warning: "#fbbd23",
-          error: "#f87272"
-        }
-      },
       "light",
       "dark",
       "cupcake",
