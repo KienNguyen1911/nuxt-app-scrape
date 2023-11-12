@@ -24,30 +24,24 @@
         >
           <li><a>Item 1</a></li>
           <li>
-            <a>Parent</a>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
+            <NuxtLink to="/scrape">Scrape</NuxtLink>
           </li>
           <li><a>Item 3</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+      <NuxtLink class="btn btn-ghost normal-case text-xl" to="/">daisyUI</NuxtLink>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a>Item 1</a></li>
-        <li tabindex="0">
-          <details>
-            <summary>Parent</summary>
-            <ul class="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
+        <li>
+          <NuxtLink to="/profile">Profile</NuxtLink>
         </li>
-        <li><a>Item 3</a></li>
+        <li>
+          <NuxtLink to="/scrape">Scrape</NuxtLink>
+        </li>
+        <!-- <li>
+          <NuxtLink to="/scrape">Scrape</NuxtLink>
+        </li> -->
       </ul>
     </div>
     <div class="navbar-end">
@@ -57,7 +51,7 @@
           <li v-for="theme in themes"><a @click="$emit('passColor', theme)">{{ theme }}</a></li>
         </ul>
       </div>
-      <a class="btn">Button</a>
+      <NuxtLink class="btn" to="/auth/login">Login</NuxtLink>
     </div>
   </div>
 </template>
