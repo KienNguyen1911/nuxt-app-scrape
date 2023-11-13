@@ -1,22 +1,33 @@
 <template>
-  <div class="container-2xl m-2">
-    <div class="grid lg:grid-cols-5 gap-4">
-      <div class="md:hidden lg:block lg:col-span-1" id="sidebar">
-        <SideBar />
-      </div>
-      <div class="md:col-span-5 lg:col-span-4">
-        <DashboardNavBar />
-        <main class="card w-96 bg-neutral min-w-full p-2">
-          <slot />
-        </main>
-      </div>
+  <div class="container-2xl drawer lg:drawer-open grid gap-4">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" :checked="checkDrawer" />
+    <div class="drawer-content">
+      <!-- Page content here -->
+      <DashboardNavBar :open-drawer="openDrawer" />
+      <main>
+        <slot />
+      </main>
     </div>
-    <!-- sidebar -->
 
-    <!-- navbar -->
+    <div class="drawer-side">
+      <label
+        for="my-drawer-2"
+        aria-label="close sidebar"
+        class="drawer-overlay"
+      ></label>
+      <side-bar></side-bar>
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const checkDrawer = ref(false);
+
+const openDrawer = () => {
+  console.log("open drawer");
+  checkDrawer.value = true;
+};
+
+</script>
 
 <style></style>

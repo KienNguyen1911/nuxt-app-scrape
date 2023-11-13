@@ -5,7 +5,7 @@
     >
     <!-- Hamburger Drawer -->
     <div class="flex-none lg:hidden">
-      <button class="btn btn-square btn-ghost" @click="openSidebar">
+      <button class="btn btn-square btn-ghost" @click="$emit('openDrawer')">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"
@@ -99,10 +99,9 @@
 
 <script lang="ts" setup>
 const dropdownLink = ref(["Login", "Profile"]);
-const openSidebar = () => {
-  const sidebar = document.getElementById("sidebar");
-  console.log(sidebar)
-  sidebar.classList.toggle("md:hidden");
+const openDrawer = () => {
+  console.log("open drawer");
+  return true;
 };
 </script>
 
